@@ -43,7 +43,7 @@ function membersCards(members){
     col.classList.add("col-4", "my-3", "text-center");
     const template = `
     <div class="card">
-            <img class="card-img-top" src="img/${members.picture}" alt="">
+            <img class="card-img-top" src="${members.picture}" alt="">
             <div class="card-body">
                 <h4 class="card-title">${members.name}</h4>
                 <p>${members.role}</p>
@@ -53,6 +53,17 @@ function membersCards(members){
     col.innerHTML = template;
     row.append(col);
 }
+
+btn.addEventListener('click', function(){
+    const newMember =  {
+      name: document.getElementById('name').value,
+      role: document.getElementById('role').value,
+      picture: document.getElementById('picture').value
+    }
+    members.push(newMember);
+    console.log(newMember);
+    membersCards(newMember);
+})
 
    /*
     <div class="card text-start">
