@@ -1,34 +1,68 @@
 "use strict";
-
+const btn = document.querySelector('button');
 const members = [
   {
     name: "Wayne Barnett",
-    role: "Founder & CEO".
-    picture: "wayne-barnett-founder-ceo.jpg",
+    role: "Founder & CEO",
+    picture: "../img/wayne-barnett-founder-ceo.jpg"
   },
   {
     name: "Angela Caroll",
-    role: "Chief Editor".
-    picture: "angela-caroll-chief-editor.jpg",
+    role: "Chief Editor",
+    picture: "../img/angela-caroll-chief-editor.jpg"
   },
   {
     name: "Walter Gordon",
-    role: "Office Manager".
-    picture: "walter-gordon-office-manager.jpg",
+    role: "Office Manager",
+    picture: "../img/walter-gordon-office-manager.jpg"
   },
   {
     name: "Angela Lopez",
-    role: "Social Media Manager".
-    picture: "angela-lopez-social-media-manager.jpg",
+    role: "Social Media Manager",
+    picture: "../img/angela-lopez-social-media-manager.jpg",
   },
   {
     name: "Scott Estrada",
-    role: "Developer".
-    picture: "scott-estrada-developer.jpg",
+    role: "Developer",
+    picture: "../img/scott-estrada-developer.jpg"
   },
   {
     name: "Barbara Ramos",
-    role: "Graphic Designer".
-    picture: "barbara-ramos-graphic-designer.jpg",
+    role: "Graphic Designer",
+    picture: "../img/barbara-ramos-graphic-designer.jpg"
   }
 ];
+const row = document.querySelector(".row");
+
+for (let i = 0; i < members.length; i++) {
+    membersCards(members[i]);
+}
+
+function membersCards(members){
+    const col = document.createElement("div");
+    col.classList.add("col-4", "my-3", "text-center");
+    const template = `
+    <div class="card">
+            <img class="card-img-top" src="img/${members.picture}" alt="">
+            <div class="card-body">
+                <h4 class="card-title">${members.name}</h4>
+                <p>${members.role}</p>
+            </div>
+        </div>
+    `;
+    col.innerHTML = template;
+    row.append(col);
+}
+
+   /*
+    <div class="card text-start">
+            <img class="card-img-top" src="img/wayne-barnett-founder-ceo.jpg" alt="">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <p class="card-text">
+                    
+                </p>
+            </div>
+        </div>
+
+    */
