@@ -65,6 +65,7 @@ btn.addEventListener('click', function(){
     membersCards(newMember);
 })
 
+//ticket
    /*
     <div class="card text-start">
             <img class="card-img-top" src="img/wayne-barnett-founder-ceo.jpg" alt="">
